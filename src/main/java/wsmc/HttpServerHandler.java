@@ -25,7 +25,7 @@ public class HttpServerHandler extends ChannelInboundHandlerAdapter {
 	 * This will set your maximum allowable frame payload length.
 	 * Setting this value for big modpack.
 	 */
-	public final static String maxFramePayloadLength = System.getProperty("wsmc.maxFramePayloadLength", "65536");
+	public final static String maxFramePayloadLength = System.getProperty("wsmc.maxFramePayloadLength", "1048576");
 
 	/**
 	 * This will be called when a WebSocket upgrade is received.
@@ -79,7 +79,7 @@ public class HttpServerHandler extends ChannelInboundHandlerAdapter {
 
 				WSMC.debug("Opened Channel: " + ctx.channel());
 
-				int maxFramePayloadLength = 65536;
+				int maxFramePayloadLength = 1048576;
 
 				try {
 					maxFramePayloadLength = Integer.parseInt(HttpServerHandler.maxFramePayloadLength);

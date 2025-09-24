@@ -42,12 +42,12 @@ public class WebSocketClientHandler extends WebSocketHandler {
 	 * This will set your maximum allowable frame payload length.
 	 * Setting this value for big modpack.
 	 */
-	public final static String maxFramePayloadLength = System.getProperty("wsmc.maxFramePayloadLength", "65536");
+	public final static String maxFramePayloadLength = System.getProperty("wsmc.maxFramePayloadLength", "1048576");
 
 	public WebSocketClientHandler(URI uri, String httpHostname) {
 		super("S->C", "C->S");
 
-		int maxFramePayloadLength = 65536;
+		int maxFramePayloadLength = 1048576;
 
 		try {
 			maxFramePayloadLength = Integer.parseInt(WebSocketClientHandler.maxFramePayloadLength);
