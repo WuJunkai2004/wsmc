@@ -33,3 +33,11 @@ jobs:
         chmod +x ./gradlew
         ./gradlew exportProperties build
         cd ..
+
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: mod-builds
+        path: |
+          fabric/build/libs/*.jar
+        retention-days: 30
